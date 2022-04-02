@@ -92,7 +92,7 @@ resource "aws_security_group" "web-node" {
     to_port   = 22
     protocol  = "tcp"
     cidr_blocks = [
-    "127.0.0.1/0"]
+    "0.0.0.0/0"]
   }
   egress {
     from_port = 0

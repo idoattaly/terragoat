@@ -15,13 +15,3 @@ resource "google_compute_subnetwork" "public-subnetwork" {
     ip_cidr_range = "192.168.10.0/24"
   }
 }
-
-resource "google_compute_firewall" "allow_all" {
-  name          = "terragoat-${var.environment}-firewall"
-  network       = google_compute_network.vpc.id
-  source_ranges = ["127.0.0.1/0"]
-  allow {
-    protocol = "tcp"
-    ports    = ["0-65535"]
-  }
-}
